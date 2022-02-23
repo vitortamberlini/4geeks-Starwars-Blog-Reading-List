@@ -1,3 +1,5 @@
-/* 
-    General Styles
-*/
+#star-wars-logo {
+    object-fit: cover;
+    width: 15%;
+    clip-path: inset(4% 2.5% 36% 2.5%);
+}
