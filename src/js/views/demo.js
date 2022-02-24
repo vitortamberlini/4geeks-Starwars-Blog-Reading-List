@@ -20,9 +20,7 @@ export const Demo = () => {
 							<Link to={"/single/" + index}>
 								<span>Link to: {item.title}</span>
 							</Link>
-							{// Conditional render example
-							// Check to see if the background is orange, if so, display the message
-							item.background === "orange" ? (
+							{item.background === "orange" ? (
 								<p style={{ color: item.initial }}>
 									Check store/flux.js scroll to the actions to see the code
 								</p>
@@ -35,6 +33,9 @@ export const Demo = () => {
 				})}
 			</ul>
 			<br />
+			<button className="btn btn-primary" onClick={() => actions.addFavorite("aaaa", "bbbbb")} >Add favorite</button>
+			<button className="btn btn-primary" onClick={() => actions.removeFavorite(store.favorites.reduce((acc, val) => val.id > acc ? val.id : acc, store.favorites[0].id))} >Remove favorite</button>
+			<button className="btn btn-primary" onClick={() => console.log(store)} >See store</button>
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
 			</Link>

@@ -1,6 +1,25 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			favorites: [
+				{
+					title: "Henlô! (2)",
+					id: 2,
+					type: "character"
+				},
+				{
+					title: "Henlô! (1)",
+					id: 1,
+					type: "character"
+
+				},
+				{
+					title: "Henlô! (3)",
+					id: 3,
+					type: "character"
+
+				}
+			],
 			demo: [
 				{
 					title: "FIRST",
@@ -16,6 +35,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
+			addFavorite: (title, type) => {
+				const newStore = getStore();
+				let newId = 1;
+
+				if (newStore.favorites.length > 0) {
+					const initialAccumulator = newStore.favorites[0].id;
+					newId = newStore.favorites.reduce((highestId, favorite) => favorite.id > highestId ? favorite.id : highestId, initialAccumulator) + 1;
+				}
+
+				const newFavorite = {title: title, id: newId, type: type};
+				
+				newStore.favorites.push(newFavorite);
+				
+				setStore(newStore);
+
+			},
+			removeFavorite: (id) => {
+				console.log(id);
+				const newStore = getStore();
+				const newFavorites = newStore.favorites.filter(item => item.id != id);
+				
+				newStore.favorites = newFavorites;
+
+				setStore(newStore);
+			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
