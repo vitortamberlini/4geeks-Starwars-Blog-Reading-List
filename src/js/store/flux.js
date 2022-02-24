@@ -4,18 +4,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites: [
 				{
 					title: "Henlô! (2)",
-					id: 2,
+					id: 23,
 					type: "character"
 				},
 				{
 					title: "Henlô! (1)",
-					id: 1,
+					id: 108,
 					type: "character"
 
 				},
 				{
 					title: "Henlô! (3)",
-					id: 3,
+					id: 430,
 					type: "character"
 
 				}
@@ -35,6 +35,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
+			getFavoritesLength: () => {
+				return getStore().favorites.length;
+			},
 			addFavorite: (title, type) => {
 				const newStore = getStore();
 				let newId = 1;
@@ -52,7 +55,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 			removeFavorite: (id) => {
-				console.log(id);
 				const newStore = getStore();
 				const newFavorites = newStore.favorites.filter(item => item.id != id);
 				
