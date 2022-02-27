@@ -6,7 +6,6 @@ import { Context } from "../store/appContext";
 export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	console.log(params);
 	return (
 		<div className="jumbotron">
 			<hr className="my-4" />

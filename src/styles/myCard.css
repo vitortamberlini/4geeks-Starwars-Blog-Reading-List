@@ -1,0 +1,9 @@
+.my-card {
+    width: 50rem;
+    min-width: 300px;
+}
+
+.my-card-image {
+    width: 100%;
+    height: 200px;
+}

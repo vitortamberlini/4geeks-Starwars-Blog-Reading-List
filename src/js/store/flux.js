@@ -1,6 +1,42 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			swapi: {
+				characters: [
+					{
+						id: 1,
+						name: "Aaaaa",
+						gender: "male",
+						eyeColor: "green"
+					},
+					{
+						id: 2,
+						name: "Aaaaa",
+						gender: "male",
+						eyeColor: "green"
+					},
+					{
+						id: 3,
+						name: "Aaaaa",
+						gender: "male",
+						eyeColor: "green"
+					},
+				],
+				planets: [
+					{
+						id: 1,
+						name: "Aaaaa",
+						gender: "male",
+						eyeColor: "green"
+					},
+					{
+						id: 2,
+						name: "Aaaaa",
+						gender: "male",
+						eyeColor: "green"
+					},
+				]
+			},
 			favorites: [
 				{
 					title: "Henlô! (2)",
@@ -34,7 +70,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
+			getCharacters: () => {
+				return getStore().swapi.characters;
+			},
+			getPlanets: () => {
+				return getStore().swapi.planets;
+			},
 			getFavoritesLength: () => {
 				return getStore().favorites.length;
 			},

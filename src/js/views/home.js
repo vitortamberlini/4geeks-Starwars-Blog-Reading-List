@@ -1,8 +1,10 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import MyCardContainer from "../component/myCardContainer"
 
 export const Home = () => (
-	<div className="text-center mt-5">
+	<div className="d-flex flex-column mx-5 mt-3">
+		<MyCardContainer containerName="Characters"/>
+		<MyCardContainer containerName="Planets"/>
 	</div>
 );
